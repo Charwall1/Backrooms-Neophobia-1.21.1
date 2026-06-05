@@ -50,6 +50,7 @@ public class BackroomsNeo {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.WALLPAPER);
+            event.accept(ModItems.ALMONDWATER);
         }
     }
 
