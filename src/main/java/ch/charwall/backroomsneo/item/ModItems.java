@@ -12,6 +12,8 @@ public class ModItems {
     public static final DeferredItem<Item> WALLPAPER = ITEMS.register("wallpaper",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> ALMONDWATER = ITEMS.register("almond_water",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
