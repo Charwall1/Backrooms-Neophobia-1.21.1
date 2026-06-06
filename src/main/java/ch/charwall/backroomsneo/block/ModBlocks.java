@@ -20,7 +20,16 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> LEVEL_ZERO_WALL = registerBlock("level_zero_wall",
             () -> new LevelZeroWallBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> REDROOMS_WALL = registerBlock("redrooms_wall",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.WOOD)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

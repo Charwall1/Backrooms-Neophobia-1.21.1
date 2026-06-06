@@ -62,6 +62,7 @@ public class BackroomsNeo {
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.LEVEL_ZERO_WALL);
+            event.accept(ModBlocks.REDROOMS_WALL);
         }
     }
 
