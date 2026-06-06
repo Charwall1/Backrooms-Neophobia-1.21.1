@@ -1,0 +1,17 @@
+{
+  "type": "backroomsneo:level_zero",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "layers": [
+        {
+          "height": 1,
+          "block": "minecraft:bedrock"
+        }
+      ],
+      "biome": "minecraft:plains",
+      "lakes": false,
+      "features": false
+    }
+  }
+}

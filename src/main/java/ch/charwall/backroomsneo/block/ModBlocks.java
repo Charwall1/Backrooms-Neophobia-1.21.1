@@ -1,6 +1,7 @@
 package ch.charwall.backroomsneo.block;
 
 import ch.charwall.backroomsneo.BackroomsNeo;
+import ch.charwall.backroomsneo.block.custom.LevelZeroWallBlock;
 import ch.charwall.backroomsneo.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -18,10 +19,8 @@ public class ModBlocks {
             DeferredRegister.createBlocks(BackroomsNeo.MOD_ID);
 
     public static final DeferredBlock<Block> LEVEL_ZERO_WALL = registerBlock("level_zero_wall",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new LevelZeroWallBlock(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
-
-
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
@@ -32,8 +31,6 @@ public class ModBlocks {
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-
-
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

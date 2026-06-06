@@ -17,6 +17,8 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import ch.charwall.backroomsneo.event.ModEvents;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(BackroomsNeo.MOD_ID)
 public class BackroomsNeo {
@@ -33,6 +35,7 @@ public class BackroomsNeo {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(ModEvents.class);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -42,6 +45,8 @@ public class BackroomsNeo {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
